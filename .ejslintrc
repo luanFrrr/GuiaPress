@@ -1,0 +1,6 @@
+{
+  "extensionsToLint": [
+    ".ejs"
+  ],
+  "ignoreUnclosedHtml": true
+}

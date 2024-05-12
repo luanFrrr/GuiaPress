@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %> <%- include('partials/homenavbar.ejs') %>
+
+<body>
+  <div class="container">
+    <hr />
+    <div class="jumbotron">
+      <h1 class="display-4">Bem vindo</h1>
+      <p class="lead">Este é um simples Blog do Guia do programador.</p>
+      <hr class="my-4" />
+      <p>
+        Navegue por uma variedade de tópicos, desde linguagens de programação
+        populares como Python, JavaScript e Java, até frameworks e tecnologias
+        emergentes como React, Angular e Node.js. Quer você esteja começando sua
+        jornada de codificação ou seja um desenvolvedor experiente em busca de
+        aprimoramento, o Guia do Programador é o seu destino definitivo.
+      </p>
+    </div>
+    <hr />
+    <% articles.forEach(article => { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= article.title %></h2>
+      </div>
+      <div class="card-body">
+        <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+      </div>
+    </div>
+    <br />
+    <% }) %>
+
+    <div class="row">
+      <div class="col col-12">
+        <a style="float: right" href="/articles/page/2">Next >> </a>
+      </div>
+      <hr />
+    </div>
+    <hr />
+  </div>
+</body>
+
+<%- include('partials/footer.ejs') %>

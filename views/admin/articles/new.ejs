@@ -1,0 +1,78 @@
+<%- include('../../partials/header.ejs') %> <%-
+include('../../partials/navbar.ejs') %>
+
+<div class="container">
+  <hr />
+  <div class="card">
+    <div class="card-header">
+      <h2>Novo Artigo</h2>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/articles/save">
+        <input
+          class="form-control"
+          type="text"
+          name="title"
+          placeholder="Defina o título do artigo"
+        /><br />
+        <textarea
+          class="form-control"
+          placeholder="Escreva o artigo aqui!"
+          name="body"
+          id="article"
+        ></textarea>
+        <br />
+        <label>Categoria</label>
+        <select name="category" class="form-control">
+          <% categories.forEach((category) => { %>
+          <option value="<%= category.id %>"><%= category.title %></option>
+          <% }) %>
+        </select>
+
+        <br />
+        <button class="btn btn-success">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../../partials/footer.ejs') %>
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    language: "pt_BR",
+    selector: "#article",
+    plugins: [
+      "advlist",
+      "autolink",
+      "link",
+      "image",
+      "lists",
+      "print",
+      "preview",
+      "hr",
+      "searchreplace",
+      "wordcount",
+      "fullscreen",
+      "insertdatetime",
+      "media",
+      "save",
+      "table",
+      "paste",
+      "emoticons",
+      "anchor",
+      "charmap",
+      "code",
+      "codesample",
+      "directionality",
+      "importcss",
+      "nonbreaking",
+      "pagebreak",
+      "quickbars",
+      "visualblocks",
+    ],
+    toolbar:
+      "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | code codesample | table | hr | searchreplace | wordcount | fullscreen | insertdatetime | save | preview | print | nonbreaking | pagebreak | charmap | anchor | spellchecker | visualblocks | code | removeformat | styleselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist checklist | link image media | preview anchor codesample insertdatetime pageembed | forecolor backcolor | table | hr removeformat | subscript superscript | charmap | print fullscreen | ltr rtl | spellchecker | visualblocks nonbreaking pagebreak restoredraft",
+  });
+</script>
