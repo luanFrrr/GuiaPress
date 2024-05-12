@@ -30,7 +30,7 @@ O Sistema de Blog é uma aplicação web desenvolvida para fornecer uma platafor
 2. Instale as dependências utilizando `npm install`.
 3. Configure o arquivo `.env` com as variáveis de ambiente necessárias, como informações de conexão com o banco de dados.
 4. Execute a aplicação utilizando `npm start`.
-5. Acesse a aplicação em seu navegador através do endereço `http://localhost:3000`.
+5. Acesse a aplicação em seu navegador através do endereço `http://localhost:8080`.
 
 ## Contribuição
 
